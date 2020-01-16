@@ -1,2 +1,2 @@
 # SemanaOmniStack10
-Week10 omnistack (Rocketseat)
+Week 10 omnistack (Rocketseat)
