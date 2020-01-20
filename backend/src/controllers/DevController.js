@@ -1,6 +1,7 @@
 const axios = require('axios');
 const Dev = require('../models/Dev');
 const parseStringAsArray = require('../utls/parseStringAsArray');
+const { findConnections, sendMessage } = require('../websocket');
 
 //index, show, store, update, destroy
 
@@ -38,6 +39,13 @@ module.exports = {
         });
         }
         //console.log(apiResponse.data);
+
+        const sendSocketMessageTo = findConnections(
+            { latitude, longitude},
+            techsArray,
+        )
+
+        sendMessage(sendSocketMessageTo, 'new-dev', dev);
         
         return response.json(dev);
         //return response.json({message: 'Hello OmniStack'});
