@@ -24,8 +24,8 @@ mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-yzgtz.mongodb.net/w
     useUnifiedTopology: true,
 });
 
-app.use(cors("http://localhost:3333"));
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
-server.listen(3333);
+server.listen(3333, () => console.log('Server is Running in port 3333, enjoy it !!'));
